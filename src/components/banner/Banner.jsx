@@ -15,9 +15,11 @@ const Banner = () => {
         <div className="banner__card">
           <div className="banner__card__info">
             <h3 className="banner__title">Living Room</h3>
-            <Link className="banner__link" to={"/shop"}>
-              Shop Now <FaArrowRightLong />
-            </Link>
+            <div>
+              <Link className="banner__link" to={"/shop"}>
+                Shop Now <FaArrowRightLong />
+              </Link>
+            </div>
           </div>
           <div className="banner__card__img">
             <img src={banner1} alt="banner img" />
