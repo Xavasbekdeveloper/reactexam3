@@ -17,6 +17,7 @@ const Menu = ({ menu, setMenu }) => {
         }`}
       ></div>
       <div className={`header__menu ${menu ? "header__menu-show" : ""}`}>
+        {/* top */}
         <div className="header__menu__top-box">
           <div className="header__menu__logo-box">
             <Link to={"/"} className="header__menu__logo-link">
@@ -53,6 +54,7 @@ const Menu = ({ menu, setMenu }) => {
             </li>
           </ul>
         </div>
+        {/* bottom */}
         <div className="header__menu__bottom-box">
           <ul className="header__menu__menu-list">
             <li className="header__menu__menu-item">
