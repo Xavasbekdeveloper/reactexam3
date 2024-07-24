@@ -2,10 +2,11 @@ import React, { memo } from "react";
 import { MdOutlineMail } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
-import "./newsletter.scss";
+import "./newsLetter.scss";
 
 const Newsletter = () => {
   let navigate = useNavigate();
+
   return (
     <>
       <section className="newsletter">
