@@ -53,9 +53,9 @@ const Header = () => {
             <button onClick={() => setMenu(true)} className="header__menu-btn">
               <IoMenu />
             </button>
-            <Link className="header__logo-link">
+            <NavLink to={"/"} className="header__logo-link">
               <img src={logo} alt="site logo" />
-            </Link>
+            </NavLink>
           </div>
           <ul className="header__list">
             <li className="header__item">
