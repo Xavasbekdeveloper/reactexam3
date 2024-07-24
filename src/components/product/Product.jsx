@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import { GoHeart, GoHeartFill } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 import "./product.scss";
 
@@ -7,7 +8,9 @@ const Product = ({ data }) => {
   return (
     <div className="product">
       <div className="product__img">
-        <img src={data?.images[0]} alt={data?.title} />
+        <Link to={`/products/${data?.id}`}>
+          <img src={data?.images[0]} alt={data?.title} />
+        </Link>
         <div className="product__img__discount">
           <span>NEW</span>
           <span>-50%</span>
@@ -22,9 +25,11 @@ const Product = ({ data }) => {
         </div>
       </div>
       <div className="product__info">
-        <h3 title={data?.title} className="product__title">
-          {data?.title}
-        </h3>
+        <Link to={`/products/${data?.id}`}>
+          <h3 title={data?.title} className="product__title">
+            {data?.title}
+          </h3>
+        </Link>
         <p className="product__price">${data?.price}</p>
       </div>
     </div>

@@ -12,8 +12,6 @@ const Products = () => {
   const page = 1;
   const { data, isLoading } = useGetProductsQuery({ limit, page });
 
-  console.log(isLoading);
-
   return (
     <section className="products max-container">
       <div className="container">

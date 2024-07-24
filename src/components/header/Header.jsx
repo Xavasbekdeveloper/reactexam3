@@ -15,27 +15,37 @@ import "./header.scss";
 const Header = () => {
   const [searchToggle, setSearchToggle] = useState(false);
   const [menu, setMenu] = useState(false);
+  const [show, setShow] = useState(true);
+
+  const handleHide = () => {
+    setShow(false);
+  };
+
   return (
     <>
-      <div className="sap-header">
-        <div className="sap-header__base-cart"></div>
-        <div className="sap-header__left-box">
-          <img src={sapHeaderIcon} alt="Sap header icons" />
-          <h3 className="sap-header__title">
-            30% off storewide — Limited time!{" "}
-          </h3>
-          <Link to={"/shop"} className="sap-header__link">
-            <p>Shop Now</p>
-            <IoArrowForwardOutline />
-          </Link>
-          <button className="sap-header__close sap-header__close-responsive">
+      {show ? (
+        <div className="sap-header">
+          <div className="sap-header__base-cart"></div>
+          <div className="sap-header__left-box">
+            <img src={sapHeaderIcon} alt="Sap header icons" />
+            <h3 className="sap-header__title">
+              30% off storewide — Limited time!{" "}
+            </h3>
+            <Link to={"/shop"} className="sap-header__link">
+              <p>Shop Now</p>
+              <IoArrowForwardOutline />
+            </Link>
+            <button className="sap-header__close sap-header__close-responsive">
+              <IoClose />
+            </button>
+          </div>
+          <button onClick={handleHide} className="sap-header__close">
             <IoClose />
           </button>
         </div>
-        <button className="sap-header__close">
-          <IoClose />
-        </button>
-      </div>
+      ) : (
+        <></>
+      )}
       <header className="header">
         <Menu menu={menu} setMenu={setMenu} />
         <nav className="header__navbar container">
