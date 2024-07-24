@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import bannersBg from "../../assets/images/hero-bg2.jpg";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
