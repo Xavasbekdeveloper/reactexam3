@@ -9,7 +9,7 @@ import "./banner.scss";
 
 const Banner = () => {
   return (
-    <section className="banner">
+    <section className="banner  max-container">
       <div className="container banner__container">
         {/* 1 */}
         <div className="banner__card">

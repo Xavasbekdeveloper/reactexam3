@@ -14,7 +14,7 @@ const Service = () => {
     </div>
   ));
   return (
-    <section className="service">
+    <section className="service max-container">
       <div className="container service__container">{cards}</div>
     </section>
   );

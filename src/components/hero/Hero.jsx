@@ -15,7 +15,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero max-container">
       <div className="container">
         <div className="hero__top">
           <Swiper

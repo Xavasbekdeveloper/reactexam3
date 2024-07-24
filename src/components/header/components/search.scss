@@ -8,6 +8,7 @@
     cursor: default;
     z-index: -2;
   }
+
   &__search-form {
     position: absolute;
     display: flex;
@@ -15,6 +16,7 @@
     width: 360px;
     right: 30px;
   }
+
   &__search-btn {
     position: absolute;
     font-size: 18px;
@@ -24,6 +26,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+
     svg {
       width: 24px;
       height: 24px;
@@ -41,6 +44,7 @@
     font-weight: 400;
     line-height: 19.1px;
   }
+
   //   &__search-input-show {
   //     border-radius: 6px 6px 0 ;
   //     border-bottom: none;
@@ -59,15 +63,18 @@
     border-top: none;
     border-radius: 0 0 2px 2px;
     overflow: auto;
+
     &::-webkit-scrollbar {
       width: 2px;
       border-radius: 20px;
     }
+
     &::-webkit-scrollbar-thumb {
       background-color: #8d8d8d;
       border-radius: 20px;
     }
   }
+
   &__search-dropdown__list {
     display: flex;
     align-items: flex-start;
@@ -75,9 +82,11 @@
     gap: 2px;
     width: 100%;
   }
+
   &__search-dropdown__item {
     width: 100%;
   }
+
   &__search-dropdown__link {
     display: flex;
     align-items: center;
@@ -85,19 +94,23 @@
     gap: 10px;
     transition: all 0.5s ease;
     width: 100%;
+
     &:hover {
       background-color: #8d8d8d1a;
     }
   }
+
   &__search-dropdown__link {
     font-size: 14px;
   }
+
   &__search-dropdown__box {
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   &__arrow__btn {
     width: 35px;
     height: 35px;
@@ -110,6 +123,7 @@
     font-size: 20px;
     display: none;
   }
+
   &__btn {
     width: 35px;
     height: 35px;
@@ -122,6 +136,7 @@
     font-size: 20px;
     display: none;
   }
+
   @media (max-width: 700px) {
     &__search-form {
       position: static;
@@ -130,6 +145,7 @@
       width: 295px;
     }
   }
+
   @media (max-width: 340px) {
     &__search-form {
       position: static;

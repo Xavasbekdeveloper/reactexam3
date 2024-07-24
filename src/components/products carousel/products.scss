@@ -1,0 +1,57 @@
+.products {
+    padding: 24px 0;
+
+    &__top {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 13px;
+    }
+
+    &__title {
+        max-width: 149px;
+        font-family: Poppins;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 44px;
+        letter-spacing: -0.4000000059604645px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-bottom: 1px solid black;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: -0.4000000059604645px;
+        color: #141718;
+    }
+
+    &__cards {
+        margin-top: 48px;
+        // display: flex;
+        // align-items: center;
+        display: grid;
+        grid-template-columns: 262px 262px 262px 262px 262px 262px 262px 262px 262px 262px;
+        gap: 24px;
+        padding-bottom: 48px;
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: none;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #141718;
+            border-radius: 10px;
+        }
+
+    }
+}

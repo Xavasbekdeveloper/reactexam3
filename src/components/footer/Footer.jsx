@@ -9,7 +9,7 @@ import "./footer.scss";
 const Footer = () => {
   return (
     <>
-      <footer className="footer max-container">
+      <footer className="footer">
         <dir className="container">
           <div className="footer__top-box">
             <div className="footer__left-box">

@@ -35,3 +35,9 @@ a {
   max-width: 2560px;
   margin: 0 auto;
 }
+
+.bg__animation {
+  background: linear-gradient(90deg, #ddd, #aaa, #ddd);
+  background-size: 200%;
+  animation: bgMove 1s linear 0s infinite;
+}
