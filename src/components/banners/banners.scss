@@ -1,0 +1,9 @@
+.banners {
+    padding-top: 24px;
+    padding-bottom: 40px;
+
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+}

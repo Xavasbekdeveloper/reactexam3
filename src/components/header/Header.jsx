@@ -17,7 +17,7 @@ const Header = () => {
   const [menu, setMenu] = useState(false);
   return (
     <>
-      <div className="sap-header">
+      <div className="sap-header max-container">
         <div className="sap-header__base-cart"></div>
         <div className="sap-header__left-box">
           <img src={sapHeaderIcon} alt="Sap header icons" />
@@ -36,7 +36,7 @@ const Header = () => {
           <IoClose />
         </button>
       </div>
-      <header className="header">
+      <header className="header max-container">
         <Menu menu={menu} setMenu={setMenu} />
         <nav className="header__navbar container">
           <div className="header__logo-box">

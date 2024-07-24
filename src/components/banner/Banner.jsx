@@ -3,9 +3,9 @@ import banner1 from "../../assets/images/banner1.png";
 import banner2 from "../../assets/images/banner2.png";
 import banner3 from "../../assets/images/banner3.png";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 import "./banner.scss";
-import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
