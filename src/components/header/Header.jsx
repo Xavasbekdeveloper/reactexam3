@@ -11,6 +11,7 @@ import Search from "./components/Search";
 import Menu from "./components/Menu";
 
 import "./header.scss";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [searchToggle, setSearchToggle] = useState(false);
@@ -20,6 +21,8 @@ const Header = () => {
   const handleHide = () => {
     setShow(false);
   };
+
+  const cartData = useSelector((state) => state.cart.value);
 
   return (
     <>
@@ -86,18 +89,18 @@ const Header = () => {
               </button>
               {searchToggle ? <Search /> : <></>}
             </div>
-            <Link to={"/contact-us"} className="header__right-box-link">
+            <Link to={"/login"} className="header__right-box-link">
               <IoMdContact />
             </Link>
             <Link
-              to={"/login"}
+              to={"/cart"}
               className="header__right-box-link header__right-box-link--cart--like"
             >
               <HiOutlineShoppingBag />
-              <span>2</span>
+              <span>{cartData.length ? cartData.length : "0"}</span>
             </Link>
             <Link
-              to={"/contact-us"}
+              to={"/wishlist"}
               className="header__right-box-link header__right-box-link--cart--like"
             >
               <LuHeart />

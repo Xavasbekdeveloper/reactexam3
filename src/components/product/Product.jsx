@@ -1,10 +1,15 @@
 import React, { memo } from "react";
 import { GoHeart, GoHeartFill } from "react-icons/go";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./product.scss";
+import { addToCart } from "../../context/slice/cartSlice";
 
 const Product = ({ data }) => {
+  const dispatch = useDispatch();
+  const wishlistData = useSelector((state) => state.wishlist.data);
+  const cartData = useSelector((state) => state.cart.value);
   return (
     <div className="product">
       <div className="product__img">
@@ -21,7 +26,14 @@ const Product = ({ data }) => {
           </button>
         </div>
         <div className="product__img-cart">
-          <button>Add to cart</button>
+          <button
+            disabled={cartData?.some((el) => el.id === data.id)}
+            onClick={() => dispatch(addToCart(data))}
+          >
+            {cartData?.some((el) => el.id === data.id)
+              ? "Added to cart"
+              : "Add to cart"}
+          </button>
         </div>
       </div>
       <div className="product__info">
