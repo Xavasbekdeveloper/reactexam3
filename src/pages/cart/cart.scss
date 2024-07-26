@@ -66,6 +66,42 @@
                 }
             }
         }
+
+        &-active {
+            border-bottom-color: #23262F;
+
+            p {
+                background: #23262F;
+
+                &:last-child {
+                    color: #23262F;
+                }
+            }
+        }
+
+        &-completed {
+            border-bottom-color: #45B26B;
+
+            p {
+                background: #45B26B;
+
+                &:last-child {
+                    color: #45B26B;
+                }
+            }
+        }
+
+        &-disabled {
+            border-bottom-color: transparent;
+
+            p {
+                background: #B1B5C3;
+
+                &:last-child {
+                    color: #B1B5C3;
+                }
+            }
+        }
     }
 
     &__bottom {
@@ -441,6 +477,12 @@
     }
 
     @media (max-width: 400px) {
+        &__top {
+            h1 {
+                font-size: 30px;
+            }
+        }
+
         &__box {
             &__bottom__item {
                 grid-template-columns: 1fr;

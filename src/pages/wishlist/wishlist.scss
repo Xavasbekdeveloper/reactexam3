@@ -1,0 +1,39 @@
+.wishlist {
+    padding: 40px 0;
+
+    &__title {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    @media (max-width: 840px) {
+        &__cards {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 700px) {
+        &__cards {
+            gap: 16px;
+        }
+    }
+
+
+    @media (max-width: 500px) {
+        &__cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 400px) {
+        &__cards {
+            gap: 8px;
+        }
+    }
+}

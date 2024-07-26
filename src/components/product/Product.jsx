@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import "./product.scss";
 import { addToCart } from "../../context/slice/cartSlice";
+import { addWishlist } from "../../context/slice/wishlistSlice";
 
 const Product = ({ data }) => {
   const dispatch = useDispatch();
@@ -21,8 +22,12 @@ const Product = ({ data }) => {
           <span>-50%</span>
         </div>
         <div className="product__img-like">
-          <button>
-            <GoHeart />
+          <button onClick={() => dispatch(addWishlist(data))}>
+            {wishlistData.some((el) => el.id === data.id) ? (
+              <GoHeartFill />
+            ) : (
+              <GoHeart />
+            )}
           </button>
         </div>
         <div className="product__img-cart">

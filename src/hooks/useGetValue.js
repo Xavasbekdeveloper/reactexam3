@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 const useGetInputValue = (initialState) => {
-  const [user, setUser] = useState(initialState);
+  const [formData, setFormData] = useState(initialState);
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUser((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  return { user, setUser, handleChange };
+  return { formData, setFormData, handleChange };
 };
 
 export default useGetInputValue;

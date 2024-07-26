@@ -7,7 +7,11 @@ import { LuFacebook, LuHeart } from "react-icons/lu";
 import { AiOutlineYoutube } from "react-icons/ai";
 
 import "./menu.scss";
+import { useSelector } from "react-redux";
+
 const Menu = ({ menu, setMenu }) => {
+  const cartData = useSelector((state) => state.cart.value);
+  const wishlistData = useSelector((state) => state.wishlist.data);
   return (
     <>
       <div
@@ -58,25 +62,25 @@ const Menu = ({ menu, setMenu }) => {
         <div className="header__menu__bottom-box">
           <ul className="header__menu__menu-list">
             <li className="header__menu__menu-item">
-              <NavLink className="header__menu__menu-link" to={"/Cart"}>
+              <NavLink className="header__menu__menu-link" to={"/cart/view"}>
                 <p>Cart</p>
                 <div className="header__menu__menu-link__cart--link">
                   <HiOutlineShoppingBag />
-                  <span>2</span>
+                  <span>{cartData.length ? cartData.length : "0"}</span>
                 </div>
               </NavLink>
             </li>
             <li className="header__menu__menu-item">
-              <NavLink className="header__menu__menu-link" to={"/Wishlist"}>
+              <NavLink className="header__menu__menu-link" to={"/wishlist"}>
                 <p>Wishlist</p>
                 <div className="header__menu__menu-link__cart--link">
                   <LuHeart />
-                  <span>2</span>
+                  <span>{wishlistData.length ? wishlistData.length : "0"}</span>
                 </div>
               </NavLink>
             </li>
           </ul>
-          <Link to={"/Login"} className="header__menu__menu-link-login">
+          <Link to={"/login"} className="header__menu__menu-link-login">
             Login
           </Link>
           <div className="header__menu__menu-buttons">

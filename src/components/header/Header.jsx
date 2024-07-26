@@ -23,6 +23,7 @@ const Header = () => {
   };
 
   const cartData = useSelector((state) => state.cart.value);
+  const wishlistData = useSelector((state) => state.wishlist.data);
 
   return (
     <>
@@ -93,7 +94,7 @@ const Header = () => {
               <IoMdContact />
             </Link>
             <Link
-              to={"/cart"}
+              to={"/cart/view"}
               className="header__right-box-link header__right-box-link--cart--like"
             >
               <HiOutlineShoppingBag />
@@ -104,7 +105,7 @@ const Header = () => {
               className="header__right-box-link header__right-box-link--cart--like"
             >
               <LuHeart />
-              <span>2</span>
+              <span>{wishlistData.length ? wishlistData.length : "0"}</span>
             </Link>
           </div>
         </nav>
