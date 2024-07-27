@@ -1,0 +1,159 @@
+.contact {
+    padding-top: 48px;
+
+    h1 {
+        max-width: 834px;
+        font-size: 54px;
+        font-weight: 500;
+        line-height: 58px;
+        letter-spacing: -1px;
+        text-align: left;
+    }
+
+
+    &__desc {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        text-align: left;
+        padding-top: 30px;
+    }
+
+    &__title {
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 44px;
+        letter-spacing: -0.4000000059604645px;
+        text-align: center;
+    }
+
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 24px;
+        padding: 40px 0;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        background: #f3f5f7;
+        padding: 20px;
+
+        svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 16px;
+            text-align: center;
+            color: #6c7275;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 26px;
+            text-align: center;
+            color: #141718;
+        }
+    }
+
+    &__form {
+        display: flex;
+        gap: 30px;
+
+        &__left {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: start;
+        }
+
+        &__input {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 8px;
+
+            input,
+            textarea {
+                padding: 8px 10px;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 26px;
+                outline: none;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                resize: none;
+            }
+        }
+
+        button {
+            background: #141718;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 28px;
+            letter-spacing: -0.4000000059604645px;
+            text-align: center;
+            color: #fff;
+            padding: 6px 40px;
+            border-radius: 8px;
+        }
+
+        &__right {
+            width: 50%;
+
+            iframe {
+                width: 100%;
+            }
+        }
+    }
+
+    &__service {
+        margin-top: 80px;
+        background-color: #f3f5f7;
+    }
+
+
+    @media (max-width: 850px) {
+        h1 {
+            font-size: 40px;
+            line-height: 44px;
+        }
+
+        &__cards {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 16px;
+        }
+
+        &__form {
+            flex-direction: column-reverse;
+
+            &__left,
+            &__right {
+                width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        h1 {
+            font-size: 30px;
+            line-height: 35px;
+        }
+
+        &__cards {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 16px;
+        }
+    }
+}

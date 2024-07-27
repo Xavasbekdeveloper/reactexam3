@@ -1,17 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/icons/logo.svg";
 import { IoClose, IoLogoInstagram } from "react-icons/io5";
-import Search from "./Search";
+import Search from "../search/Search";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { LuFacebook, LuHeart } from "react-icons/lu";
 import { AiOutlineYoutube } from "react-icons/ai";
-
-import "./menu.scss";
 import { useSelector } from "react-redux";
+import { RiLoginBoxLine } from "react-icons/ri";
+import { IoMdContact } from "react-icons/io";
+import "./menu.scss";
 
 const Menu = ({ menu, setMenu }) => {
   const cartData = useSelector((state) => state.cart.value);
   const wishlistData = useSelector((state) => state.wishlist.data);
+  const isLogin = useSelector((state) => state.auth.token);
   return (
     <>
       <div
@@ -80,8 +82,11 @@ const Menu = ({ menu, setMenu }) => {
               </NavLink>
             </li>
           </ul>
-          <Link to={"/login"} className="header__menu__menu-link-login">
-            Login
+          <Link
+            to={isLogin ? "/admin/create-product" : "/login"}
+            className="header__menu__menu-link-login"
+          >
+            {isLogin ? <IoMdContact /> : <RiLoginBoxLine />}
           </Link>
           <div className="header__menu__menu-buttons">
             <IoLogoInstagram />

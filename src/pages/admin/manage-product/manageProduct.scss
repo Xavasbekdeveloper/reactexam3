@@ -1,0 +1,41 @@
+.manage-products {
+    padding: 25px 30px;
+
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    &__pagination {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__delete {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button {
+            width: 100px;
+            border-radius: 8px;
+            background-color: #141414;
+            outline: none;
+            color: #fff;
+            padding: 5px 10px;
+        }
+    }
+}

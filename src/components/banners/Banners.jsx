@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import "./banners.scss";
 
-const Banners = () => {
+const Banners = ({ title, text, desc }) => {
   return (
     <section className="banners">
       <div className="banners__container">
@@ -13,12 +13,9 @@ const Banners = () => {
           <img src={bannersBg} alt="banners img" />
         </div>
         <div className="banners__right">
-          <p className="banners__text">SALE UP TO 35% OFF</p>
-          <h2 className="banners__title">HUNDREDS of New lower prices!</h2>
-          <p className="banners__desc">
-            It’s more affordable than ever to give every room in your home a
-            stylish makeover
-          </p>
+          <p className="banners__text">{text}</p>
+          <h2 className="banners__title">{title}</h2>
+          <p className="banners__desc">{desc}</p>
           <Link className="banner__link" to={"/shop"}>
             Shop Now <FaArrowRightLong />
           </Link>

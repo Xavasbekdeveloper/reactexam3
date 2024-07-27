@@ -1,0 +1,78 @@
+.sidebar {
+    height: 100vh;
+    background: #232627;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    &__top {
+        padding-top: 20px;
+        padding-left: 31px;
+        margin-bottom: 38px;
+
+        &__link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 38.25px;
+            color: #FFFFFF;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding-left: 31px;
+        padding-right: 39px;
+
+    }
+
+    &__link {
+        display: inline-block;
+        width: 100%;
+        border-radius: 8px;
+        padding: 10px 0;
+        padding-left: 12px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24.59px;
+        color: #FFFFFF;
+        transition: all .3s ease-in-out;
+
+        svg {
+            width: 18px;
+            height: 18px;
+            color: #FFFFFF;
+        }
+    }
+
+    .active {
+        background: #FFFFFF33;
+    }
+
+    &__bottom {
+        position: absolute;
+        left: 31px;
+        bottom: 50px;
+
+        button {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: #FFFFFF;
+
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 24.59px;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                color: #FFFFFF;
+            }
+        }
+    }
+}

@@ -15,7 +15,13 @@ const Home = () => {
       <Banner />
       <Products />
       <Service />
-      <Banners />
+      <Banners
+        text={"SALE UP TO 35% OFF"}
+        title={"HUNDREDS of New lower prices!"}
+        desc={
+          "It’s more affordable than ever to give every room in your home a stylish makeover"
+        }
+      />
       <Article />
       <NewsLetter />
     </>

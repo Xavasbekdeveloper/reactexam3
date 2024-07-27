@@ -1,0 +1,75 @@
+.update-product {
+
+
+    h3 {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 30.8px;
+        color: #454545;
+        margin-bottom: 15px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+
+        &__input {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            label {
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 25.6px;
+                color: #4c4c4c;
+                margin-bottom: 8px;
+            }
+
+            textarea,
+            select,
+            input {
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 25.6px;
+                background: #f8f8f8;
+                padding: 10px;
+                color: #4c4c4c;
+                border: none;
+                border-radius: 10px;
+                outline: none;
+                height: 38px;
+            }
+
+            textarea {
+                resize: none;
+                height: 100px;
+            }
+
+            select {
+                option {
+                    background: #f8f8f8;
+                }
+            }
+        }
+
+        button {
+            padding: 10px;
+            background: #232627;
+            color: #fff;
+            width: 180px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}

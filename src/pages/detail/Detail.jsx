@@ -2,15 +2,22 @@ import React, { memo, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useGetProductByIdQuery } from "../../context/api/productApi";
 import { IoMdStar } from "react-icons/io";
-import { FaMinus, FaPlus } from "react-icons/fa";
 import { GoHeart, GoHeartFill } from "react-icons/go";
 import DetailLoading from "../../components/detail-loading";
+import NewsLetter from "../../components/newsLetter/NewsLetter";
+import { useDispatch, useSelector } from "react-redux";
+import { addWishlist } from "../../context/slice/wishlistSlice";
+import { addToCart } from "../../context/slice/cartSlice";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 import "./detail.scss";
-import NewsLetter from "../../components/newsLetter/NewsLetter";
 
 const Detail = () => {
   const [imgInx, setImgInx] = useState(0);
+  const dispatch = useDispatch();
+  const wishlistData = useSelector((state) => state.wishlist.data);
+  const cartData = useSelector((state) => state.cart.value);
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -31,7 +38,13 @@ const Detail = () => {
               <>
                 <div className="detail__top__left">
                   <div className="detail__top__left__img">
-                    <img src={data?.images[imgInx]} alt={data?.title} />
+                    <Zoom>
+                      <img
+                        src={data?.images[imgInx]}
+                        alt={data?.title}
+                        width={800}
+                      />
+                    </Zoom>
                   </div>
                   <div className="detail__top__left__bottom">
                     {data?.images?.map((img, inx) => (
@@ -99,22 +112,27 @@ const Detail = () => {
                   </div>
                   <div className="detail__top__right__btns">
                     <div className="detail__top__right__btns-top">
-                      <div>
-                        <button>
-                          <FaMinus />
-                        </button>
-                        <span>1</span>
-                        <button>
-                          <FaPlus />
-                        </button>
-                      </div>
-                      <button className="detail__top__right__btns-top__wishlist">
-                        <GoHeart /> Wishlist
+                      <button
+                        onClick={() => dispatch(addWishlist(data))}
+                        className="detail__top__right__btns-top__wishlist"
+                      >
+                        {wishlistData.some((el) => el.id === data.id) ? (
+                          <GoHeartFill />
+                        ) : (
+                          <GoHeart />
+                        )}{" "}
+                        Wishlist
+                      </button>
+                      <button
+                        onClick={() => dispatch(addToCart(data))}
+                        disabled={cartData?.some((el) => el.id === data.id)}
+                        className="detail__top__right__btns__cart"
+                      >
+                        {cartData?.some((el) => el.id === data.id)
+                          ? "Added to cart"
+                          : "Add to cart"}
                       </button>
                     </div>
-                    <button className="detail__top__right__btns__cart">
-                      Add to Cart
-                    </button>
                   </div>
                   <div className="detail__top__right__bottom">
                     <p>SKU</p>

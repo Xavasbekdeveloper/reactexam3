@@ -14,5 +14,5 @@ const orderSlice = createSlice({
   },
 });
 
-export const { order } = orderSlice.actions;
+export const { toggleOrder } = orderSlice.actions;
 export default orderSlice.reducer;

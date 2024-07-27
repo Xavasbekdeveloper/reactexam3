@@ -1,15 +1,41 @@
 import React, { memo, useEffect } from "react";
 import Process from "../../../components/process/Process";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./order.scss";
+import { useNavigate } from "react-router-dom";
+import { removeAll } from "../../../context/slice/cartSlice";
+import { toggleOrder } from "../../../context/slice/orderSlice";
 
 const Order = ({ total }) => {
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
   const cartData = useSelector((state) => state.cart.value);
 
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
+
+  const handleComplete = () => {
+    dispatch(removeAll());
+    dispatch(toggleOrder(false));
+    navigate("/");
+  };
+
+  useEffect(() => {
+    return () => {
+      handleComplete();
+    };
+  }, []);
+
+  const calculateAllPrice = () => {
+    let total = cartData?.reduce(
+      (sum, item) => sum + item?.amount * item?.price,
+      0
+    );
+    return total.toFixed(2);
+  };
+
   return (
     <section className="order container">
       <div className="container">
@@ -35,11 +61,11 @@ const Order = ({ total }) => {
             <ul className="order__middle-second">
               <li>#1234i1243_123</li>
               <li>October 19. 2024</li>
-              <li>{total}</li>
+              <li>${calculateAllPrice}</li>
               <li>Credit card</li>
             </ul>
           </div>
-          <button>Purchase history</button>
+          <button onClick={handleComplete}>Purchase history</button>
         </div>
       </div>
     </section>

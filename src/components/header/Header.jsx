@@ -7,11 +7,12 @@ import { FiSearch } from "react-icons/fi";
 import { IoMdContact } from "react-icons/io";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { LuHeart } from "react-icons/lu";
-import Search from "./components/Search";
-import Menu from "./components/Menu";
+import Search from "./search/Search";
+import Menu from "./Menu/Menu";
+import { RiLoginBoxLine } from "react-icons/ri";
+import { useSelector } from "react-redux";
 
 import "./header.scss";
-import { useSelector } from "react-redux";
 
 const Header = () => {
   const [searchToggle, setSearchToggle] = useState(false);
@@ -24,6 +25,7 @@ const Header = () => {
 
   const cartData = useSelector((state) => state.cart.value);
   const wishlistData = useSelector((state) => state.wishlist.data);
+  const isLogin = useSelector((state) => state.auth.token);
 
   return (
     <>
@@ -90,8 +92,11 @@ const Header = () => {
               </button>
               {searchToggle ? <Search /> : <></>}
             </div>
-            <Link to={"/login"} className="header__right-box-link">
-              <IoMdContact />
+            <Link
+              to={isLogin ? "/admin/create-product" : "/login"}
+              className="header__right-box-link"
+            >
+              {isLogin ? <IoMdContact /> : <RiLoginBoxLine />}
             </Link>
             <Link
               to={"/cart/view"}

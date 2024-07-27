@@ -35,7 +35,7 @@
         // display: flex;
         // align-items: center;
         display: grid;
-        grid-template-columns: 262px 262px 262px 262px 262px 262px 262px 262px 262px 262px;
+        grid-template-columns: repeat(10, 262px);
         gap: 24px;
         padding-bottom: 48px;
         overflow-x: auto;

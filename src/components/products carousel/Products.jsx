@@ -25,7 +25,9 @@ const Products = () => {
           {isLoading ? (
             <ProductsLoading limit={limit} />
           ) : (
-            data?.map((product) => <Product key={product.id} data={product} />)
+            data?.map((product) => (
+              <Product key={product.id} data={product} isAdmin={false} />
+            ))
           )}
         </div>
       </div>

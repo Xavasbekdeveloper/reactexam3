@@ -1,0 +1,56 @@
+.overlay {
+    width: 100%;
+    height: 100vh;
+    background: #0006;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: overlay 0.3s forwards;
+    z-index: 99;
+}
+
+@keyframes overlay {
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    width: 500px;
+    max-height: 90vh;
+    background: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%) scale(0.8);
+    border-radius: 15px;
+    padding: 30px;
+    animation: modal 0.3s forwards;
+    overflow: auto;
+    z-index: 999;
+}
+
+@keyframes modal {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
+.modal__close {
+    position: absolute;
+    top: 0;
+    right: 12px;
+
+    button {
+        border: none;
+        padding: 0;
+        background-color: transparent;
+
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+}

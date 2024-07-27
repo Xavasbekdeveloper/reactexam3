@@ -7,7 +7,7 @@ const ProductsLoading = ({ limit }) => {
 
   for (let i = 0; i < limit; i++) {
     loading.push(
-      <div className="productsLoading__item">
+      <div key={i} className="productsLoading__item">
         <div className="productsLoading__img bg__animation"></div>
         <div className="productsLoading__title bg__animation"></div>
         <div className="productsLoading__title bg__animation"></div>

@@ -1,4 +1,4 @@
-.check-out {
+.checkout {
     margin-bottom: 60px;
 
     &__wrapper {
@@ -200,7 +200,7 @@
     }
 }
 
-.check-out {
+.checkout {
 
     &__payment-method,
     &__shipping-address,
@@ -314,7 +314,7 @@
     }
 }
 
-.check-out {
+.checkout {
     @media (max-width: 1124px) {
         &__wrapper {
             display: grid;

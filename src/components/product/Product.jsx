@@ -2,12 +2,14 @@ import React, { memo } from "react";
 import { GoHeart, GoHeartFill } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
-import "./product.scss";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { FiEdit } from "react-icons/fi";
 import { addToCart } from "../../context/slice/cartSlice";
 import { addWishlist } from "../../context/slice/wishlistSlice";
 
-const Product = ({ data }) => {
+import "./product.scss";
+
+const Product = ({ data, isAdmin, setEditProduct, setDeleteProduct }) => {
   const dispatch = useDispatch();
   const wishlistData = useSelector((state) => state.wishlist.data);
   const cartData = useSelector((state) => state.cart.value);
@@ -17,11 +19,17 @@ const Product = ({ data }) => {
         <Link to={`/products/${data?.id}`}>
           <img src={data?.images[0]} alt={data?.title} />
         </Link>
-        <div className="product__img__discount">
+        <div
+          style={isAdmin ? { display: "none" } : { display: "flex" }}
+          className="product__img__discount"
+        >
           <span>NEW</span>
           <span>-50%</span>
         </div>
-        <div className="product__img-like">
+        <div
+          style={isAdmin ? { display: "none" } : { display: "block" }}
+          className="product__img-like"
+        >
           <button onClick={() => dispatch(addWishlist(data))}>
             {wishlistData.some((el) => el.id === data.id) ? (
               <GoHeartFill />
@@ -30,10 +38,13 @@ const Product = ({ data }) => {
             )}
           </button>
         </div>
-        <div className="product__img-cart">
+        <div
+          style={isAdmin ? { display: "none" } : { display: "block" }}
+          className="product__img-cart"
+        >
           <button
-            disabled={cartData?.some((el) => el.id === data.id)}
             onClick={() => dispatch(addToCart(data))}
+            disabled={cartData?.some((el) => el.id === data.id)}
           >
             {cartData?.some((el) => el.id === data.id)
               ? "Added to cart"
@@ -48,6 +59,14 @@ const Product = ({ data }) => {
           </h3>
         </Link>
         <p className="product__price">${data?.price}</p>
+        <div className="product__btns">
+          <button onClick={() => setEditProduct(data)}>
+            <FiEdit />
+          </button>
+          <button onClick={() => setDeleteProduct(data)}>
+            <RiDeleteBin6Line />
+          </button>
+        </div>
       </div>
     </div>
   );
