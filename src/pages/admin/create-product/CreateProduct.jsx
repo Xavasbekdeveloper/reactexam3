@@ -2,9 +2,8 @@ import React, { memo, useEffect, useState } from "react";
 import { useCreateProductMutation } from "../../../context/api/productApi";
 import { useGetCategoriesQuery } from "../../../context/api/categoryApi";
 import useGetInputValue from "../../../hooks/useGetValue";
-
+import { useNavigate } from "react-router-dom";
 import "./createProduct.scss";
-import { toast } from "react-toastify";
 
 const initialState = {
   title: "",
@@ -15,6 +14,7 @@ const initialState = {
 
 const CreateProduct = () => {
   const [images, setImages] = useState("");
+  const navigate = useNavigate();
   const { formData, setFormData, handleChange } =
     useGetInputValue(initialState);
 
@@ -31,9 +31,9 @@ const CreateProduct = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      toast.success("yaratildi");
       setFormData(initialState);
       setImages("");
+      navigate("/admin/manage-product");
     }
   }, [isSuccess]);
 

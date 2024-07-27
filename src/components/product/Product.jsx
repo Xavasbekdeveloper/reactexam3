@@ -59,7 +59,10 @@ const Product = ({ data, isAdmin, setEditProduct, setDeleteProduct }) => {
           </h3>
         </Link>
         <p className="product__price">${data?.price}</p>
-        <div className="product__btns">
+        <div
+          style={isAdmin ? { display: "flex" } : { display: "none" }}
+          className="product__btns"
+        >
           <button onClick={() => setEditProduct(data)}>
             <FiEdit />
           </button>

@@ -23,6 +23,13 @@ const DetailLoading = () => {
         <div className="bg__animation detailLoading__middle__item"></div>
         <div className="bg__animation detailLoading__middle__item"></div>
         <div className="bg__animation detailLoading__middle__item"></div>
+        <div className="bg__animation detailLoading__middle__item"></div>
+        <div className="bg__animation detailLoading__middle__item"></div>
+        <div className="bg__animation detailLoading__middle__item"></div>
+        <div className="bg__animation detailLoading__middle__item"></div>
+        <div className="bg__animation detailLoading__middle__item"></div>
+        <div className="bg__animation detailLoading__middle__item"></div>
+        <div className="bg__animation detailLoading__middle__item"></div>
       </div>
       {/* <div className="detailLoading__right">
         <div className="bg__animation detailLoading__right__top"></div>

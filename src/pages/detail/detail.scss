@@ -209,6 +209,7 @@
                 &-top {
                     display: flex;
                     align-items: center;
+
                     gap: 24px;
                     margin-bottom: 16px;
 
@@ -324,6 +325,14 @@
     }
 }
 
+@media (max-width:480px) {
+    .detail__top__right__btns-top {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+
 @media (max-width:400px) {
     .detail {
         &__top {
@@ -353,12 +362,7 @@
                     }
                 }
 
-                &__btns {
-                    &-top {
-                        flex-direction: column;
-                        align-items: start;
-                    }
-                }
+
             }
         }
     }

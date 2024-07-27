@@ -2,6 +2,7 @@ import React, { memo, useEffect } from "react";
 import { useCreateCategoryMutation } from "../../../context/api/categoryApi";
 import useGetInputValue from "../../../hooks/useGetValue";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 import "./createCategory.scss";
 
@@ -11,6 +12,7 @@ const initialState = {
 };
 
 const CreateCategory = () => {
+  const navigate = useNavigate();
   const [createCategory, { data, isLoading, isSuccess }] =
     useCreateCategoryMutation();
 
@@ -25,8 +27,8 @@ const CreateCategory = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      toast.success("yaratildi");
       setFormData(initialState);
+      navigate("/admin/manage-category");
     }
   }, [isSuccess]);
 
@@ -57,7 +59,7 @@ const CreateCategory = () => {
           ></textarea>
         </div>
         <button disabled={isLoading}>
-          {isLoading ? "loading.." : "create"}
+          {isLoading ? "loading..." : "create"}
         </button>
       </form>
     </section>

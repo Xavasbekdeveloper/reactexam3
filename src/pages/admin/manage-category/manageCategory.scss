@@ -1,0 +1,64 @@
+.manage-category {
+    padding: 20px 30px;
+
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    &-item {
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        border: 1px solid #141414;
+
+        &-img {
+            width: 100%;
+            height: 240px;
+            flex: 1;
+            padding: 5px;
+
+            img {
+                width: 100%;
+                height: 240px;
+                object-fit: contain;
+            }
+        }
+
+        &-info {
+            padding: 6px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            color: #141414;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+
+        button {
+            padding: 5px 8px;
+            border-radius: 12px;
+            border: 1px solid #141718;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        svg {
+            width: 17px;
+            height: 17px;
+            color: #141718;
+        }
+    }
+}

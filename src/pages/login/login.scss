@@ -21,6 +21,7 @@
         position: absolute;
         top: 32px;
         left: 50%;
+        transform: translateX(-50%);
     }
 
     &__form {
@@ -29,19 +30,17 @@
         justify-content: center;
         width: 50%;
 
-
         &-box {
             padding-left: 88px;
             width: 456px;
         }
-
 
         h2 {
             font-family: Poppins;
             font-size: 40px;
             font-weight: 500;
             line-height: 44px;
-            letter-spacing: -0.4000000059604645px;
+            letter-spacing: -0.4px;
             text-align: left;
             color: #141718;
             margin-bottom: 24px;
@@ -127,9 +126,66 @@
             font-size: 16px;
             font-weight: 500;
             line-height: 28px;
-            letter-spacing: -0.4000000059604645px;
+            letter-spacing: -0.4px;
             text-align: center;
             color: #fff;
+        }
+    }
+
+    @media (max-width: 1030px) {
+        &__form-box {
+            padding-left: 20px;
+            width: 100%;
+        }
+    }
+
+    @media(max-width: 768px) {
+        flex-direction: column;
+        gap: 30px;
+
+        &__left {
+            width: 100%;
+            height: 500px;
+
+        }
+
+        &__form {
+            width: 100%;
+            padding: 0 16px;
+
+            &-box {
+                padding-left: 0;
+                width: 100%;
+            }
+        }
+
+        h2 {
+            font-size: 32px;
+            line-height: 36px;
+            margin-bottom: 16px;
+        }
+
+        &-text {
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 24px;
+        }
+
+        &-input {
+            margin-bottom: 24px;
+        }
+
+
+        &-middle {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+    }
+
+    @media (max-width:500px) {
+        &__left {
+            height: 350px;
         }
     }
 }

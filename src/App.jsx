@@ -30,6 +30,7 @@ const ManageCategory = lazy(() =>
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import BackTop from "./components/back-top";
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
         </Route>
       </Routes>
       <ToastContainer />
+      <BackTop />
     </>
   );
 }

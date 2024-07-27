@@ -56,7 +56,7 @@ const EditProduct = ({ editProduct, setEditProduct }) => {
           <label htmlFor="image-url">Image-url</label>
           <textarea
             value={formData.images.join("\n")}
-            onChange={(e) => setImages(e.target.value)}
+            onChange={handleChange}
             required
             name="images"
             id="image-url"
@@ -66,7 +66,7 @@ const EditProduct = ({ editProduct, setEditProduct }) => {
         <div className="update-product__form__input">
           <label htmlFor="category">Category</label>
           <select
-            value={formData.category}
+            value={editProduct.category}
             onChange={handleChange}
             name="category"
             id=""
