@@ -22,7 +22,7 @@ const Home = () => {
           "It’s more affordable than ever to give every room in your home a stylish makeover"
         }
       />
-      <Article />
+      <Article isShow={true} />
       <NewsLetter />
     </>
   );

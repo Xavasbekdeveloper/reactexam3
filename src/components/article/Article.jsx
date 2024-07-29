@@ -7,16 +7,20 @@ import { Link } from "react-router-dom";
 
 import "./article.scss";
 
-const Article = () => {
+const Article = ({ isShow }) => {
   return (
     <section className="article max-container">
       <div className="container">
-        <div className="article__top">
-          <h2 className="article__title">Article</h2>
-          <Link className="banner__link" to={"/shop"}>
-            More Articles <FaArrowRightLong />
-          </Link>
-        </div>
+        {isShow ? (
+          <div className="article__top">
+            <h2 className="article__title">Article</h2>
+            <Link className="banner__link" to={"/blog"}>
+              More Articles <FaArrowRightLong />
+            </Link>
+          </div>
+        ) : (
+          <></>
+        )}
         <div className="article__cards">
           <div className="article__card">
             <div className="article__card__img">
@@ -24,7 +28,7 @@ const Article = () => {
             </div>
             <div className="article__card__info">
               <h3>7 ways to decor your home</h3>
-              <Link className="banner__link" to={"/shop"}>
+              <Link className="banner__link" to={"/blog"}>
                 Read More <FaArrowRightLong />
               </Link>
             </div>
@@ -35,7 +39,7 @@ const Article = () => {
             </div>
             <div className="article__card__info">
               <h3>Kitchen organization</h3>
-              <Link className="banner__link" to={"/shop"}>
+              <Link className="banner__link" to={"/blog"}>
                 Read More <FaArrowRightLong />
               </Link>
             </div>
@@ -46,7 +50,7 @@ const Article = () => {
             </div>
             <div className="article__card__info">
               <h3>Decor your bedroom</h3>
-              <Link className="banner__link" to={"/shop"}>
+              <Link className="banner__link" to={"/blog"}>
                 Read More <FaArrowRightLong />
               </Link>
             </div>

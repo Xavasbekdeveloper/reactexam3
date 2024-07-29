@@ -38,7 +38,7 @@ a {
 }
 
 .bg__animation {
-  background: linear-gradient(90deg, #ddd, #aaa, #ddd);
+  background: linear-gradient(90deg, #eaeaeaad, #aaaaaa6b, #eaeaeaad);
   background-size: 200%;
   animation: bgMove 1s linear 0s infinite;
 }

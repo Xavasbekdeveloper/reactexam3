@@ -4,7 +4,11 @@ import { BiCreditCardFront } from "react-icons/bi";
 import Process from "../../../components/process/Process";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { decreaseAmount, removeCart } from "../../../context/slice/cartSlice";
+import {
+  decreaseAmount,
+  increaseAmount,
+  removeCart,
+} from "../../../context/slice/cartSlice";
 import useGetInputValue from "../../../hooks/useGetValue";
 
 import "./checkout.scss";
@@ -365,7 +369,7 @@ Jami: ${calculateDiscountedPrice()}
                         </p>
                         <div className="checkout__right-box-card-counter">
                           <button
-                            disabled={item?.quantity <= 0}
+                            disabled={item?.amount <= 1}
                             onClick={() => dispatch(decreaseAmount(item))}
                             className="checkout__right-box-card-minus-btn"
                           >
@@ -373,7 +377,7 @@ Jami: ${calculateDiscountedPrice()}
                           </button>
                           <p>{item?.amount}</p>
                           <button
-                            onClick={() => dispatch(addToCart(item))}
+                            onClick={() => dispatch(increaseAmount(item))}
                             className="checkout__right-box-card-plus-btn"
                           >
                             +

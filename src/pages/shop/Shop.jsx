@@ -27,7 +27,9 @@ const Shop = () => {
     window.scroll(0, 0);
   }, []);
 
-  const pageCount = Math.ceil(lengthData?.length / limit) || 0;
+  let pageLength = categoryValue === "all" ? lengthData.length : data.length;
+
+  const pageCount = Math.ceil(pageLength / limit) || 0;
 
   const handleChange = (event, value) => {
     setPage(value);
